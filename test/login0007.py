@@ -1,4 +1,4 @@
-#About algorithm of taking the subway
+#About the algorithm of taking the subway
 
 # 轨道交通价格调整为：
 # 6公里(含)内3元;
