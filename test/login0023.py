@@ -1,4 +1,4 @@
-#About print the triangle by python
+#About Third adding of Airplane Games
 
 import pygame, sys, random
 
