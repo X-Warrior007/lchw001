@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    /* 伪元素 都是 冒号开头  :before :after */
+    div:before{
+        content: '24期';
+        color: red;
+    }
+    div::after{
+        content: '很帅';
+        font-size: 60px;
+    }
+    /* 无论是after还是before  都必须有content属性  如果没有内容写法 content:''; */
+    </style>
+</head>
+<body>
+    <!-- 元素 == 标记 == 标签 -->
+    <!-- 需求：输入一句话：24期班长很帅 -->
+    <!-- <div>1班长2</div> 1:div里面开头  2：div里面结尾 -->
+    <div>班长</div>
+</body>
+</html>
