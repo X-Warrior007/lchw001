@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    textarea{
+        width: 500px;
+        height: 300px;
+        resize: none;
+        /* 禁止拖拽 */
+        outline: none;
+        /* 去掉焦点框 */
+    }
+    </style>
+</head>
+<body>
+    <!-- 表单作用：制作登录、注册、搜索 -->
+    <!-- 表单域form：作用，整合所有用户输入的内容，然后一并发送给服务器 -->
+    <form action="" method="post">
+        <!-- 表单域form内部的所有功能标签 -- 叫做表单控件 -->
+        <!-- form好多功能控件都是用input标签书写，需要配合一个type属性 -->
+        文本框：<input type="text" placeholder="设置用户名">
+        <br><br>
+        密码框：<input type="password">
+        <br><br>
+        单选框：<input type="radio" name="sex" id="man"><label for="man">男</label> <input type="radio" name="sex" checked id="woman"><label for="woman">女</label>
+        <!-- 
+            1、单选功能：添加name属性，且取值完全相同
+            2、默认选中：checked=“checked”  -- html5.0写法化简为checked
+            3、扩大触发区域：把文字用标签label包裹，保证label标签身上的for属性取值和input身上的id取值完全相同
+         -->
+         <br><br>
+         复选框：<input type="checkbox" checked>读书  <input type="checkbox">旅游  <input type="checkbox">王者荣耀
+         <br><br>
+         上传文件：<input type="file">
+         <br><br>
+         下拉菜单：
+         <select>
+            <option>北京</option>
+            <option>上海</option>
+            <option selected>广州</option>
+            <option>深圳</option>
+        </select>
+        <br><br>
+        文本域：
+        <textarea></textarea>
+        <br><br>
+        <input type="submit" value="同意并注册">
+        <input type="button" value="普通按钮">
+        <input type="reset">
+    </form>
+    <!-- 想要submit和reset功能真实可用，必须保证有form标签 -->
+</body>
+</html>

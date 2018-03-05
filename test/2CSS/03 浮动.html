@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box1{
+        width: 100px;
+        height: 100px;
+        background: red;
+        float: left;
+        /* 浏览器认为设置了浮动属性的标签不存在，所谓的不存在指的是不再占用原来默认元素类型（文档流/标准流）的位置  */
+    }
+    .box2{
+        width: 200px;
+        height: 200px;
+        background: green;
+        float: left;
+    }
+    .box3{
+        width: 300px;
+        height: 300px; 
+        background: blue;
+        float: right;
+    }
+    </style>
+</head>
+<body>
+    <!-- 需求：想在一行共存标签；想写宽高；标签不换行；标签之间不能有空格造成的间距 -- 浮动 -->
+    <!-- 浮动作用：实现块级标签完美的没有间距的在一行共存 -->
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+</body>
+</html>
