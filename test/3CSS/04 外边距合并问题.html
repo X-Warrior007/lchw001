@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- <style>
+    div{
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+    }
+    .top{
+        background: green;
+        margin-bottom: 80px;
+    }
+    .bottom{
+        background: blue;
+        margin-top: 60px;
+    }
+    </style> -->
+    <style>
+    .father{
+        width: 300px;
+        height: 300px;
+        background: #ccc;
+        /* border: 1px solid #000; */
+        /* overflow: hidden; */
+        /* 检查 */
+    }
+    .son{
+        width: 100px;
+        height: 100px;
+        background: green;
+        margin-top: 50px;
+    }
+    .clearfix::before{
+        content: '';
+        display: table;
+    }
+    </style>
+</head>
+<body>
+    <!-- 外边距margin  bug  出现环境：当垂直排列的盒子的垂直外边距挨在一起，就会产生合并现象：不是margin相加，而取两者之间的较大值 -->
+    <!-- <div class="top"></div>
+    <div class="bottom"></div> -->
+    <!-- 浏览器认为：父子级关系也是垂直，添加margin，也会产生问题 -->
+    <div class="father clearfix">
+        <!-- before :隔离 -->
+        <div class="son"></div>
+    </div>
+</body>
+</html>

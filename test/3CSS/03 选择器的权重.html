@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="mycss.css">
+    <style>
+    /* #box{
+        color: purple;
+    } */
+    .son{
+        color: pink;
+    }
+    p{
+        color: green!important;
+        /* 最高 */
+        font-size: 60px!important;
+    }
+    div{
+        color: red;  /* */
+    }
+    div .son{
+        color: aqua;
+    }
+    .father .son{
+        color: yellow;
+    }
+    </style>
+    <!-- 
+        1、p变红色的原因是继承到了父级的红色 -- 继承所有权重最低
+        2、嵌入和外链看书写顺序，谁在下谁生效; 行内 > 嵌入和外链
+        3、标签 < 类 < id : 允许累加计算
+        4、!important 提权功能，提高权重到最高
+     -->
+</head>
+<body>
+    <!-- 选择器权重 -- 优先级：当一个标签使用的选择器冲突的时候，了解浏览器到底执行的选择器是谁 -- 也就是说执行了谁，就是谁的权重更高，优先级更高 -->
+    <div class="father">
+        <p class="son" id="box" style="color:black;">测试权重优先级</p>
+    </div>
+</body>
+</html>
