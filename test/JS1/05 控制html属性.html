@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload = function(){
+        // 绝大多数html属性的写法，在js中是完全一样；只有一个class属性，在js中写为className
+        document.getElementById('link').href = 'http://www.baidu.com';
+        document.getElementById('pic').src = 'xx.png';
+        document.getElementById('pic').alt = 'js'
+        document.getElementById('pic').className = 'xxx'
+    }
+    </script>
+</head>
+<body>
+    <a href="###" id="link">超链接</a>
+    <img src="1.jpg" alt="替换文字" id="pic" class="box">
+</body>
+</html>

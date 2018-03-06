@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="myjs.js"></script>
+    <script>
+    alert('嵌入式');
+    </script>
+    
+</head>
+<body>
+    <!-- js要求：行内式js必须是 事件（需要用户触发：鼠标滑过  鼠标离开  鼠标单击....） 的格式  html价值对k=“v” -->
+    <!-- 三种写法的执行顺序：谁先写谁先执行（嵌入和外链）；行内永远最后当用户触发的时候才执行-->
+    <div onclick="alert('行内式js');">测试行内式js</div>
+</body>
+</html>

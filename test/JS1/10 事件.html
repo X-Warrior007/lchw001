@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload = function(){
+        // 事件：当用户操作的时候要执行什么什么命令（需要用户触发）
+        // 语法：事件源.事件类型 = 匿名函数
+        // 事件源：操作的对象
+        // 事件类型：操作方法
+        // 匿名函数：function(){} -- 命令
+        // 需求：当用户鼠标换过btn1的时候，执行一个弹窗alert功能
+        var oBtn1 = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+        var oBtn3 = document.getElementById('btn3');
+        oBtn1.onmouseover = function(){
+            alert('鼠标滑过')
+        }
+        oBtn2.onmouseout = function(){
+            alert('鼠标离开')
+        }
+        oBtn3.onclick = function(){
+            alert('danji')
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- <input type="button"> -->
+    <button id="btn1">鼠标滑过</button>
+    <button id="btn2">鼠标离开</button>
+    <button id="btn3">单击</button>
+</body>
+</html>

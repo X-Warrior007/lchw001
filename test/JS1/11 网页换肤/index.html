@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/skin02.css" id="link">
+    <script>
+    window.onload = function(){
+        // 分析：鼠标单击按钮（变量），控制link标签换href取值 -- 变量（皮肤一和皮肤二的css名）
+        var oBtn1 = document.getElementById('btn1');
+        // var oBtn2 = document.getElementsByTagName  -- 标签名称查找
+        var oBtn2 = document.getElementById('btn2');
+        var oLink = document.getElementById('link');
+        oBtn1.onclick = function(){
+            oLink.href = 'css/skin01.css'
+        }
+        oBtn2.onclick = function(){
+            oLink.href = 'css/skin02.css'
+        }
+    }
+    </script>
+</head>
+<body>
+    <h1>网页换肤</h1>
+    <input type="button" value="皮肤一" id="btn1">
+    <input type="button" value="皮肤二" id="btn2">
+</body>
+</html>

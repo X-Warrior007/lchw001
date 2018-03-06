@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload = function(){
+        // DOM查找方法有好多，从id名开始去查找：这是最简单快捷
+        //直接控制文字内容
+        // document.getElementById('box').innerHTML = 'js控制的内容';
+        //控制了加标签的内容
+        // document.getElementById('box').innerHTML = '<p>pppp</p>';
+        //清空内容
+        document.getElementById('box').innerHTML = '';
+    }
+    </script>
+</head>
+<body>
+    <div id="box">测试DOM查找及控制内容</div>
+    <!-- <div id="box">
+        <p>pppp</p>
+    </div> -->
+</body>
+</html>
