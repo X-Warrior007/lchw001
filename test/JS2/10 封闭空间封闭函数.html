@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function fn1(){
+            alert(1)
+        }
+        fn1()
+        ;;;;;(function(){ //1、函数名已经冲突
+            function fn1(){
+                alert(2)
+            }
+            fn1()
+        })()
+
+        // 2、预见到问题
+        !function(){
+            alert(3)
+        }()
+
+        ~function(){
+            alert(4)
+        }()
+        // 作用：当同事配合有可能函数名使用冲突，造成某个命令无法执行
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

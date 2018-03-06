@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var arr = [1,2,3,4,3,2,1]
+        var newArr = [];
+        // 利用indexOf()配合循环和if
+        // 检查数据中每个数据，看一下下标
+        for(var i=0;i<arr.length;i++)
+        {
+            // 得到一个下标 检查这个下标是不是arr各个数据的下标，如果是保留(方法：把这些想保留的数据追加到新的数组里面，上面先声明空的数组)，否则就丢弃
+            // arr.indexOf(arr[i]) == i
+            // indexOf(1)
+            if(arr.indexOf(arr[i]) == i)
+            {
+                newArr.push(arr[i])  //这里的arr[i]，已经通过下标已经过滤好的
+            }
+        }
+        alert(newArr)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

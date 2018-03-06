@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+    window.onload = function(){
+        // 定时器：2种：单次定时和多次循环定时 -- 控制命令的执行
+        var oBtn1 = document.getElementById('btn1');
+        var oBtn2 = document.getElementById('btn2');
+        var oBtn3 = document.getElementById('btn3');
+        var oTimer = null;
+        oBtn1.onclick = function(){
+            //开启单次定时
+            // setTimeout(执行的命令,延迟时间)
+            // 执行的命令：1、匿名函数的形式function（）{}；2、自定义函数的形式 (***直接写函数名，而不是调用式)
+            // 延迟时间：以毫秒为单位，1000毫秒 = 1秒
+            setTimeout(function(){
+                alert('单次定时')
+            },2000)
+        }
+        // xx()
+        // function xx(){
+        //     // xxx
+        // }
+        oBtn2.onclick = function(){
+            oTimer = setInterval(xx,2000)
+        }
+        function xx(){
+            alert('多次定时')
+        }
+        oBtn3.onclick = function(){
+            //停止多次定时
+            // clearInterval(定时器的名字)
+            clearInterval(oTimer);
+            // 经验：clear只是停止定时器，但是仍然保存了命令，为了释放缓存，会将oTimer置为空
+            oTimer = null;
+        }
+    }
+    </script>
+</head>
+<body>
+    <button id="btn1">单次定时</button>
+    <button id="btn2">多次循环定时</button>
+    <button id="btn3">停止定时器</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var str = '10.9'
+        // alert(typeof(parseInt(str)))
+        // alert(parseInt(str)) 将字符串转换成数值型 去掉小数部分，不是四舍五入
+        // alert(parseFloat(str)) 转换数据类型  保留小数部分
+        // var str1 ='abcac'
+        // var str1 = '2018-1-18'
+        // alert(str1.split('-')) //返回一个数组数据
+        var str2 = 'abcabcjqk';
+        // str2.substring(开始,结束) -- 不包含结束位置
+        //alert(str2.substring(2,4))  //ca
+        //alert(str2.substring(2))  //2表示开始位置，截取从2开始到最后所有
+        // 需求：字符串做反转：数组reverse， -- 字符串转成数组.reverse().分割成字符串
+        alert(str2.split('').reverse().join(''))
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

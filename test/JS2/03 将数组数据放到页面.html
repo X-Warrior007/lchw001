@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    ul,li{ margin: 0; padding: 0; list-style: none;}
+    .box{
+        width: 500px;
+        margin: 100px auto;
+    }
+    li{
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px dotted #000;
+        padding-left: 20px;
+    }
+    </style>
+    <script>
+    window.onload = function(){
+        // 需求：把数组的数据写入到页面li标签里面 -- <li>arr[2]</li> -- 用数据的个数去生成li标签
+        var arr = ['前任3','前任4','前任5','前任6','前任7']
+        var str = '';
+        var oMyul = document.getElementById('myul');
+        for(var i=0;i<arr.length;i++)
+        {
+            str += '<li>'+arr[i]+'</li>'
+        }
+        //  设置ul的内容
+        oMyul.innerHTML = str;
+    }
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul id="myul">
+            <li>11</li>
+            <li>11</li>
+            <li>11</li>
+        </ul>
+    </div>
+</body>
+</html>

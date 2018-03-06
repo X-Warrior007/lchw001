@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var num = 0; //全局变量
+        
+        alert(num)
+        function fn(){
+            var num1=1; //局部变量
+            alert(num1);
+            num = 10; //函数体里面访问到全局变量num，然后把num重新赋值
+            alert(num)
+            // ********声明局部变量num10,但是写丢了var，表示的是自动生成了一个全局变量num10，这里是赋值
+            num10 = 100;  //
+            alert(num10)
+        }
+        fn()
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

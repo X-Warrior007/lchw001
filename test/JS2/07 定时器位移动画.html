@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        background: pink;
+        /* js改变div的位置  marginleft  定位（固定）left */
+        position: fixed;
+        left: 0;
+         top: 0;
+    }
+    </style>
+    <script>
+    window.onload = function(){
+        var oBox = document.getElementById('box');
+        var num = 0; //num是left的取值
+        var speed = 5;
+        // 不断的取改变盒子的left取值 -- 每隔一段时间执行left取值的变换 -- 多次循环定时 -- 需求：当运动到800 ，执行返向运动
+        setInterval(fnMove,30)
+        function fnMove(){
+            num+=speed;
+            if(num==800)
+            {
+                //反向
+                // num-=5;
+                // num+= -5;
+                speed = -5;
+            }
+            //如果想小于0，执行向右侧移动
+            if(num<0)
+            {
+                // ++
+                speed = 5;
+            }
+            oBox.style.left = num +'px';
+        }
+    }
+    </script>
+</head>
+<body>
+    <div id="box"></div>
+</body>
+</html>
