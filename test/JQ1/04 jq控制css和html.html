@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jq/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // css()  分 单属性操作 和 多属性操作
+        // 单属性操作：访问和控制
+        // $('div').css('width','500px')  //单属性控制
+        // alert($('div').css('width'))  //访问宽度取值到底是多少
+        // 多属性：css({k:v,k:v,k:v})
+        $('div').css({'width':'500px','height':'300px','background-color':'green'})
+        $('div').html('<p>jq</p>')  //html()用法和css()的单属性用法完全相同
+        alert($('div').html())
+    })
+    </script>
+</head>
+<body>
+    <div>文字</div>
+</body>
+</html>

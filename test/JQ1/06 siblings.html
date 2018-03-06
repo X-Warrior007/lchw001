@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jq/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // 单击按钮，点谁谁变绿 -- 给按钮添加单击事件，把点的这个标签背景色为绿色 -- 其他人变背景色红色
+        $('button').click(function(){
+            // $('button').css('background','green')
+            // this -- 点谁谁就是this  功能：指向事件源
+            // 把事件源变绿色，其他标签（事件源的同级标签就是兄弟标签）是红色 -- 完善，事件源是绿色，但是兄弟标签是默认背景色
+            // $(this).css('background','green')
+            // $(this).siblings().css('background','')
+
+
+            $(this).css('background','green').siblings().css('background','')  //链式编程
+            // 排他思想：只许州官放火不许百姓点灯
+        })
+    })
+    </script>
+</head>
+<body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+</body>
+</html>

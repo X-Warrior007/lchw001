@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 100px;
+        height: 100px;
+        background: pink;
+        opacity: 0.6;
+    }
+    </style>
+    <script src="jq/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // $('div').animate(动画过程,动画时间,运动曲线,回调函数)
+        // 1、动画过程：css键值对 -- 写法：{k:v,k:v}
+        // 2、动画时间：存在默认值 -- 600
+        // 3、运动曲线：swing（缓冲/缓动） 和 linear(匀速)  -- 不常用
+        // 4、回调函数：就是一个匿名函数 -- 作用：当动画完成之后执行的命令
+        // 注意：animate不支持变色动画
+        $('div').eq(0).animate({'width':'500px','height':'300px','background':'green'},1000,'swing',function(){
+            alert('动画完成了')
+        })
+        // $('div').eq(1).animate({'width':'500px'},1000,'linear')
+    })
+    </script>
+</head>
+<body>
+    <div></div>
+    <!-- <div></div> -->
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jq/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // 原有css中的选择器，在jq中也有，并且含义用法写法完全相同
+        // $('#box').css('background','green');
+        // $('li:first').css('background','green');
+        // $('li:last').css('background','green');
+        // $('li:eq(1)').css('background','green');  //equal 等于：选中索引值等于某个数字的标签
+        // $('li').eq(0).css('background','green');
+        // $('.box').nextAll().css('background','green'); //选择器转移或选择集转移
+        // $('.box').prev().css('background','green');
+        // $('li[class=box]').css('background','green');  //选中某个属性等于某个值的标签
+        // 自定义选择器
+        // $('li[data-xx=jqk]').css('background','green'); 
+        // $('li').not('.box').css('background','green'); 
+        $('.box1').has('p').css('background','green'); //选中父级
+        $('.box2').find('p').css('background','green'); //选中子级
+    })
+    </script>
+</head>
+<body>
+    <ul>
+        <li data-xx="jqk">文字1</li>
+        <li>文字2</li>
+        <li class="box">文字3</li>
+        <li>文字4</li>
+        <li id="box">文字5</li>
+        <li>文字6</li>
+        <li>文字7</li>
+        <li>文字8</li>
+    </ul>
+    <div class="box1">
+        <p>1111111</p>
+    </div>
+    <div class="box2">
+        <p>2222222</p>
+    </div>
+</body>
+</html>

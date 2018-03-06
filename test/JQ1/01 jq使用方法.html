@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="jq/jquery-1.12.4.min.js"></script>
+    <script>
+    // 自己的jq代码 -- 一堆标签才能完成一个功能，不允许中间打断
+    // ？网页行为 -- 书写jq也需要入口函数  
+    // $() -- jq中的选择函数 -- 作用：以后想要选中谁，都去在小括号里面填参数 -- jq里面不需要id名查找
+    $(document).ready(function(){  //-- 完整写法
+        alert(1)
+    })  //-- 当网页文档准备好之后要执行ready小括号里面的命令 -- 小括号里面写匿名函数
+
+    $(function(){  //化简写法
+        alert(2)
+    })
+
+    // $(function(){})
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    ul,li{
+        margin: 0;
+         padding: 0;
+         list-style: none;
+    }
+    .box{
+        width: 300px;
+        height: 40px;
+        margin: 100px auto;
+    }
+    a{
+        text-decoration: none;
+        color: #333;
+    }
+    li{
+        width: 100px;
+        height: 40px;
+        background: #ccc;
+        text-align: center;
+        line-height: 40px;
+        float: left;
+    }
+    /* .box ul ul{} */
+    .box li ul{
+        display: none;
+    }
+    </style>
+    <script src="jq/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // 给li绑定鼠标移入事件，显示子级菜单，鼠标离开，隐藏子级菜单
+        // $('.box li').mouseover(function(){
+        //     // 控制自己的子级
+        //     $(this).children('ul').show();
+        // })
+        // $('.box li').mouseout(function(){
+        //     $(this).children('ul').hide()
+        // })
+
+
+
+
+        // $('.box li').hover(function(){
+        //     //mouseover
+        //     $(this).children('ul').show();
+        // },function(){
+        //     //mouseout
+        //     $(this).children('ul').hide()
+        // });
+
+        
+
+        $('.box li').hover(function(){
+            // mouseover  和mouseout
+            // 鼠标移入和离开，切换子级做显示和隐藏 -- toggle()
+            $(this).children('ul').toggle();
+        });
+    })
+    </script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li> 
+                <a href="###">男星</a>
+                <ul>
+                    <li><a href="###">贾乃亮</a></li>
+                    <li><a href="###">pGone</a></li>
+                    <li><a href="###">王宝强</a></li>
+                </ul>
+            </li>
+            <li>
+                    <a href="###">女星</a>
+                    <ul>
+                        <li><a href="###">李小璐</a></li>
+                        <li><a href="###">pGone</a></li>
+                        <li><a href="###">王宝强</a></li>
+                    </ul>
+                </li>
+                <li>
+                        <a href="###">导演</a>
+                        <ul>
+                            <li><a href="###">出事了</a></li>
+                            <li><a href="###">pGone</a></li>
+                            <li><a href="###">王宝强</a></li>
+                        </ul>
+                    </li>
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        background: #666;
+        display: none;
+    }
+    </style>
+    <!-- <script>
+    window.onload = function(){
+        var oBtn = document.getElementById('btn');
+        var oBox = document.getElementById('box');
+        oBtn.onclick = function(){
+            // 隐藏 -- css 属性的 display  为none
+            oBox.style.display = 'none';
+            oBox.style.width = '500px'
+            oBox.style.height = '300px'
+        }
+    }
+    </script> -->
+    <script src="jq/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // 按钮添加单击，控制div隐藏
+        // jq选中button，添加单击事件，jq选中div，设置隐藏   $(jq的选择器)  onclick - click onmouseover  mouseover onmouseout  mouseout
+        $('button').click(function(){
+            // $('div').hide(500)
+            // $('div').show('slow')
+            $('div').toggle('fast')
+        })
+    })
+    </script>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div id="box"></div>
+</body>
+</html>

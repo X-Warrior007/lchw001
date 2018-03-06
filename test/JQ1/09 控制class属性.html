@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .box{
+        width: 200px;
+        height: 200px;
+        background: #666;
+    }
+    </style>
+    <script src="jq/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        $('button').click(function(){
+            // $('div').addClass('box')
+            // $('div').removeClass('box') //如果有且只有一个类名，这个类名还想要删除，可以不写类名
+            $('div').toggleClass('box')
+        })
+    })
+    </script>
+</head>
+<body>
+    <button>按钮</button>
+    <div class="box main"></div>
+</body>
+</html>
