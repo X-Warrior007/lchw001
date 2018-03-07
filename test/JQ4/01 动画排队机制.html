@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        background: #666;
+    }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        $('button').click(function(){
+            // 在形成动画的函数之前加stop()方法滞停动画排队
+            $('div').stop().slideToggle(500);
+        })
+    })
+    </script>
+</head>
+<body>
+    <button>按钮</button>
+    <div></div>
+</body>
+</html>
