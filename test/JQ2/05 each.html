@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // 形参e（dw）和event（sublime）
+        // $(this).index() -- 依赖于事件才有index（）
+        $('li').each(function(event){
+            // event  :选中所有标签，加一个索引值的排序 == event就是索引值
+            $(this).html(event)
+        })
+    })
+    </script>
+</head>
+<body>
+    <!-- each：jq循环或遍历 -->
+    <!-- 需求：让jq选中所有li，添加内容，每个人的内容就是自己的索引值 -->
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+</body>
+</html>

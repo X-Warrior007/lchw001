@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style type="text/css">
+        .talk_con{
+            width:600px;
+            height:500px;
+            border:1px solid #666;
+            margin:50px auto 0;
+            background:#f9f9f9;
+        }
+        .talk_show{
+            width:580px;
+            height:420px;
+            border:1px solid #666;
+            background:#fff;
+            margin:10px auto 0;
+            overflow:auto;
+        }
+        .talk_input{
+            width:580px;
+            margin:10px auto 0;
+        }
+        .whotalk{
+            width:80px;
+            height:30px;
+            float:left;
+            outline:none;
+        }
+        .talk_word{
+            width:420px;
+            height:26px;
+            padding:0px;
+            float:left;
+            margin-left:10px;
+            outline:none;
+            text-indent:10px;
+        }        
+        .talk_sub{
+            width:56px;
+            height:30px;
+            float:left;
+            margin-left:10px;
+        }
+        .atalk{
+           margin:10px; 
+        }
+        .atalk span{
+            display:inline-block;
+            background:#0181cc;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+        .btalk{
+            margin:10px;
+            text-align:right;
+        }
+        .btalk span{
+            display:inline-block;
+            background:#ef8201;
+            border-radius:10px;
+            color:#fff;
+            padding:5px 10px;
+        }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script type="text/javascript">      
+    // 写出对应功能代码  
+        $(function(){
+            // 按钮绑定单击事件，获取用户输入的内容，写入到上面的内容分区
+            $('#talksub').click(function(){
+                // 获取用户在文本框中的输入的内容
+                var vals = $('#talkwords').val()
+                // alert(vals)
+                // 看a还是b == 看下拉菜单勾选到了0 还是1这个value
+                var whoVal = $('#who').val();
+                var str = '';
+
+                // 如果用户输入的内容是空，报错
+                if(vals=='')
+                {
+                    alert('请输入内容');
+                    return;
+                }
+
+                if(whoVal==0)
+                {
+                    str = '<div class="atalk"><span>'+vals+'</span></div>'
+                }
+                else{
+                    str = '<div class="btalk"><span>'+vals+'</span></div>'
+                }
+                // 显示内容 -- words设置内容 -- html() -- 原始的html（）  +  str
+                $('#words').html( $('#words').html() +str )
+                $('#talkwords').val('')
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="talk_con">
+        <div class="talk_show" id="words">
+            <div class="atalk"><span>A说：吃饭了吗？</span></div>
+            <div class="btalk"><span>B说：还没呢，你呢？</span></div>
+        </div>
+        <div class="talk_input">
+            <select class="whotalk" id="who">
+                <option value="0">A说：</option>
+                <option value="1">B说：</option>
+            </select>
+            <input type="text" class="talk_word" id="talkwords">
+            <input type="button" value="发送" class="talk_sub" id="talksub">
+        </div>
+    </div>
+</body>
+</html>

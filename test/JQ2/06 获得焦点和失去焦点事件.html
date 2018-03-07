@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        $('.text').focus(function(){
+            // 清空默认文字 -- 设置value属性取值为空 -- 条件：如果val取值是请输入关键字
+            if($(this).val()=='请输入关键字')
+            {
+                $(this).val('')
+            }
+        })
+        $('.text').blur(function(){
+            // 还原默认文字 -- 设置value属性取值为  请输入关键字  -- 条件：如果用户输入内容为空
+            if($(this).val()=='')
+            {
+                $(this).val('请输入关键字')
+            }
+
+        })
+    })
+    </script>
+</head>
+<body>
+    <input type="text" value="请输入关键字" class="text">
+    <input type="button" value="搜索">
+</body>
+</html>

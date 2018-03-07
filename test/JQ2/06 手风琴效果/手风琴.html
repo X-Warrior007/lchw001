@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+*{margin:0;padding:0;}
+body{font-size:12px;}
+#accordion{width:727px; height:350px; margin:100px auto 0 auto; position:relative; overflow:hidden; border:1px solid #CCC;}
+#accordion ul{list-style:none;}
+#accordion ul li{width:643px;height:350px; position:absolute; background:#FFF;}
+#accordion ul li span{display:block;width:20px; height:350px; float:left; text-align:center; color:#FFF; padding-top:5px; cursor:pointer;}
+#accordion ul li img{display:block; float:right;}
+.bar01{left:0px;}
+.bar02{left:643px;}
+.bar03{left:664px;}
+.bar04{left:685px;}
+.bar05{left:706px;}
+.bar01 span{background:#09E0B5;}
+.bar02 span{background:#3D7FBB;}
+.bar03 span{background:#5CA716;}
+.bar04 span{background:#F28B24;}
+.bar05 span{background:#7C0070;}
+</style>
+<script type="text/javascript" src="../js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    // 单击事件，控制li的位置left取值改变配合animate
+    // $('#accordion span').click(function(){  //因为span是li唯一的，所以索引值永远是0
+    //     /*
+    //         0    0  0*21
+    //         21  1  1*21
+    //         42  2  2*21
+    //         63
+    //         结论：index（）*21  索引值*21  $(this).index()*21
+    //     */
+    //     alert($(this).parent().index())
+    //     $(this).parent().animate({'left':$(this).parent().index()*21})
+    // })
+        
+        $('#accordion li').click(function(){
+            // 控制事件源
+            $(this).animate({'left':$(this).index()*21})
+            // 控制事件源前面的li
+            $(this).prevAll().each(function(event){  //--this，单击的是谁this就是谁
+                //$(this).animate({'left':event*21});  //不能用event得到的索引值：配合prevAll，索引值排列，和目标顺序是反的
+                $(this).animate({'left':$(this).index()*21});
+            })
+
+            /*
+            版心727：
+            706  727 -21*1        4  1= 5-index
+            685   727 - 21*2      3  2 =5-index
+            664  727 -21*3        2
+
+            结论：727 - 21*（5-index）
+            */
+            $(this).nextAll().each(function(event){
+                // $(this).animate({'left':event*21})
+                // var num = 727 - 21*(5-event)
+                // $(this).animate({'left':num})  不能用event，event选出来的后面的所有人，索引值为0，1，2
+                $(this).animate({'left':727 - 21*(5-$(this).index())})
+            })
+        })
+        
+
+
+})
+</script>
+
+
+<title>手风琴效果</title>
+</head>
+
+<body>
+<div id="accordion">
+	<ul>
+	<li class="bar01"><span>非洲景色01</span><img src="images/001.jpg" /></li>
+    <li class="bar02"><span>非洲景色02</span><img src="images/002.jpg" /></li>
+    <li class="bar03"><span>非洲景色03</span><img src="images/003.jpg" /></li>
+    <li class="bar04"><span>非洲景色04</span><img src="images/004.jpg" /></li>
+    <li class="bar05"><span>非洲景色05</span><img src="images/005.jpg" /></li>
+	</ul>
+</div>
+</body>
+</html>

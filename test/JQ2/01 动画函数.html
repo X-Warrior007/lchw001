@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    div{
+        width: 200px;
+        height: 200px;
+        background: pink;
+        /* display: none; */
+    }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        $('button').click(function(){
+            // 滑动动画
+            // $('div').slideUp(500)
+            // $('div').slideDown(500)
+            // $('div').slideToggle(500)
+            // 透明度动画
+            // $('div').fadeIn(500) 淡入 -- 透明显示
+            // $('div').fadeOut(500) 淡出 -- 透明隐藏
+            // $('div').fadeToggle(500)
+            // $('div').fadeTo(时间,透明度) -- 设置透明度
+            $('div').fadeTo(500,0.6)
+        })
+    })
+    </script>
+</head>
+<body>
+    <button>按钮</button>
+    <div></div>
+</body>
+</html>

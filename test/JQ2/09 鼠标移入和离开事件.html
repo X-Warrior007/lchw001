@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .father{
+        width: 200px;
+        height: 200px;
+        background: #ccc;
+    }
+    .son{
+        width: 100px;
+        height: 100px;
+        background: green;
+    }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // $('.father').mouseover(function(){
+        //     alert('father')
+        // })
+        // $('.son').mouseover(function(){
+        //     alert('son')
+        // })
+        $('.father').mouseenter(function(){
+            alert('father')
+        })
+        $('.son').mouseenter(function(event){
+            alert('son');
+            // event.stopPropagation();
+            return false;
+        })
+        // hover == mouseenter和mouseleave
+    })
+    </script>
+</head>
+<body>
+    <!-- jq  mouseover  和mouseout -->
+    <!-- mouseenter  和 mouseleave -->
+    <!-- 事件冒泡：父子级嵌套且都写了事件的情况下 -->
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+</html>

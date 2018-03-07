@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        $('#forms').submit(function(event){
+            // alert(1)
+            // 表单的默认提交行为：某些浏览器的bug：谷歌某些特定版本和安卓系统手机
+            //event.preventDefault(); //阻止表单默认提交行为
+            return false; //工作中常用
+        })
+    })
+    </script>
+</head>
+<body>
+    <form id="forms">
+        <input type="text">
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>

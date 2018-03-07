@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .banxin{
+        width: 1200px;
+        height: 200px;
+        border: 1px solid #000;
+        margin: 200px auto;
+    }
+    .search{
+        width: 200px;
+        height: 200px;
+        background: #ccc;
+    }
+    </style>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        $(window).scroll(function(){
+            // 网页滚动：如果网页滚动坐标值大于200，固定定位：左上角；否则，不大于200的时候，恢复到默认元素类型的位置
+            // 得到网页滚动坐标值
+            // alert($(window).scrollTop())
+            var topVal = $(window).scrollTop()
+            if(topVal>200)
+            {
+                $('.search').css({'position':'fixed','left':0,'top':0});
+            }
+            else
+            {
+                // 取消固定定位  static 静态定位就是不定位
+                $('.search').css({'position':'static'});
+            }
+        })
+    })
+    </script>
+</head>
+<body>
+    <div class="banxin">
+        <div class="search"></div>
+    </div>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+    <p>文字文字文字文字文字</p>
+</body>
+</html>
