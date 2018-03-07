@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // 追加节点步骤：1、声明变量保存节点数据；2、使用追加函数将节点变量追加到页面中去 -- 同级和子级
+        var lis = $('<li>2222</li>')  //$('#list')
+        // var  str = '<li>2222</li>'    //html( str )
+        // lis.appendTo($('ul'))  //子级追加到结尾处 -- 参数写的是目的地
+        //$('ul').append(lis) //子级追加，结尾处
+        // lis.prependTo($('ul')) //子级追加到开头处
+        // $('ul').prepend(lis)  //子级追加，开头处
+
+        // 同级  after 和 before   insertAfter  和 insertBefore -- 目的地
+        var oDiv = $('<div>divdivdiv</div>')  //对象
+        // oDiv.insertAfter($('ul'))
+        // $('ul').after(oDiv);
+        // oDiv.insertBefore($('ul'))
+        // $('ul').before(oDiv)
+
+
+
+        // $('li').remove();
+        // $('li').empty();
+        $('ul').empty()
+    })
+    </script>
+</head>
+<body>
+    <!-- 节点：标签、内容、属性 -->
+    <!-- 追加节点、删除、清空 -->
+    
+    <ul>
+        
+        <!-- li1 -->
+        <li>1111</li>
+        <!-- li2 -->
+    </ul>
+    
+</body>
+</html>

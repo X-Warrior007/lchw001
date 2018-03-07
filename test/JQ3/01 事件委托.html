@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script>
+    $(function(){
+        // li执行单击
+        // $('li').click(function(){
+        //     alert(1)
+        // })
+        // $('ul').delegate(真实的事件源,事件类型,匿名函数)
+        $('ul').delegate('li','click',function(){
+            alert('ok')
+        })
+        // 事件委托：1、提高代码的执行效果；2、给未来元素绑定命令 -- 通过程序添加到页面的标签
+        // on(事件类型,匿名函数) -- 给未来元素绑定命令
+            // $('li').on('click',function(){
+            //     alert('on')
+            // })
+    })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>文字</li>
+        <li>文字</li>
+        <li>文字</li>
+        <li>文字</li>
+        <li>文字</li>
+        <li>文字</li>
+        <li>文字</li>
+        <li>文字</li>
+    </ul>
+</body>
+</html>

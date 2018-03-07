@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>todolist</title>
+	<style type="text/css">
+		.list_con{
+			width:600px;
+			margin:50px auto 0;
+		}
+		.inputtxt{
+			width:550px;
+			height:30px;
+			border:1px solid #ccc;
+			padding:0px;
+			text-indent:10px;			
+		}
+		.inputbtn{
+			width:40px;
+			height:32px;
+			padding:0px;
+			border:1px solid #ccc;
+		}
+		.list{
+			margin:0;
+			padding:0;
+			list-style:none;
+			margin-top:20px;
+		}
+		.list li{
+			height:40px;
+			line-height:40px;
+			border-bottom:1px solid #ccc;
+		}
+
+		.list li span{
+			float:left;
+		}
+
+		.list li a{
+			float:right;
+			text-decoration:none;
+			margin:0 10px;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		// 增加按钮单击：获取用户输入的数据 -- 放到节点变量li标签中 -- 追加函数把节点变量追加到页面中
+		$('#btn1').click(function(){
+			var vals = $('#txt1').val()
+			// alert(vals)
+			// 如果用户输入的内容是空，报错
+			if(vals =='')
+			{
+				alert('请输入内容');
+				return;
+			}
+			// href取值javascript:;作用：超链接不做任何的跳转功能，具体的功能看js的绑定的命令javascript:void(0);
+			var lis = $('<li><span>'+vals+'</span><a href="javascript:;" class="up"> ↑ </a><a href="javascript:;" class="down"> ↓ </a><a href="javascript:;" class="del">删除</a></li>');
+			lis.prependTo($('#list'));
+		})
+		// $('#list a').click(function(){
+		// 	alert(1) //不能触发命令：当程序执行的时候，jq还读取不到未来元素，所以就没有对应的命令被触发
+		// })
+		$('#list').delegate('a','click',function(){
+			// alert('ok')
+			//不同的a有不同的功能
+			// 如果类名是del -- 先得到class属性的取值，执行删除功能 -- 删除的对象就是父级li
+			var myClass = $(this).prop('class');
+			if(myClass == 'del')
+			{
+				$(this).parent().remove();
+			}
+			else if(myClass == 'up')
+			{
+				//如果已经是第一个了，提示一下
+				if($(this).parent().index() == 0)
+				{
+					alert('已经是第一个了');
+					return;
+				}
+				// 把自己的父级li，向上移动一位
+				// $(this).parent().目的地
+				$(this).parent().insertBefore( $(this).parent().prev() )
+			}
+			else if(myClass == 'down')
+			{
+				// 如果是最后一个就提示
+				if($(this).parent().next().length == 0)
+				{
+					// 条件：自己的父级的后面没有其他人了，长度为0
+					alert('已经是最后一个了');
+					return;
+				}
+				// 自己的父级li，向下移动一位
+				$(this).parent().insertAfter( $(this).parent().next() )
+			}
+		});
+	})
+	</script>	
+</head>
+<body>
+
+	<div class="list_con">
+	<h2>To do list</h2>
+		<input type="text" name="" id="txt1" class="inputtxt">
+		<input type="button" name="" value="增加" id="btn1" class="inputbtn">
+		
+		<ul id="list" class="list">
+
+			<li><span>学习html</span><a href="javascript:;" class="up"> ↑ </a><a href="javascript:;" class="down"> ↓ </a><a href="javascript:;" class="del">删除</a></li>
+			<li><span>学习css</span><a href="javascript:;" class="up"> ↑ </a><a href="javascript:;" class="down"> ↓ </a><a href="javascript:;" class="del">删除</a></li>
+			<!-- sfasdjf -->
+			<li><span>学习javascript</span><a href="javascript:;" class="up"> ↑ </a><a href="javascript:;" class="down"> ↓ </a><a href="javascript:;" class="del">删除</a></li>
+
+		</ul>
+
+	</div>
+</body>
+</html>
