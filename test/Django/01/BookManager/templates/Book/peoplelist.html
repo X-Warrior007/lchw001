@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>人物列表信息</title>
+</head>
+<body>
+
+<ul>
+    {% for people in people_list %}
+        <li>{{ people.name }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>
