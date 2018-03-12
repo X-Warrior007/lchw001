@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>POST属性</title>
+</head>
+<body>
+
+<form action="/post1/" method="post">
+
+    {% csrf_token %}
+
+    <input type="text" name="uname">
+    <br>
+    <br>
+    <input type="password" name="password">
+    <br>
+    <br>
+    <input type="radio" name="sex" value="男">男 <input type="radio" name="sex" value="女">女
+    <br>
+    <br>
+    <input type="checkbox" name="like" value="足球">足球 <input type="checkbox" name="like" value="篮球">篮球
+    <br>
+    <br>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

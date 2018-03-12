@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省市区</title>
+</head>
+<body>
+
+<h1>当前城市：{{ city.name }}</h1>
+
+<h1>上级省会：{{ city.parent.name }}</h1>
+
+<h1>下级区县：</h1>
+<ul>
+    {% for qu in city.areainfo_set.all %}
+        <li>{{ qu.name }}</li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax</title>
+
+    {# 加载jquery静态文件 #}
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+
+    <script>
+        {# 等待DOM加载完成，发送ajax请求 #}
+        $(function () {
+            {# 点击按钮，发送ajax请求 #}
+            $('#ajaxbtn').click(function () {
+                {# 发送ajax请求 #}
+                {# 参数1：请求地址，参数2：请求完成回调，可以获取到服务器响应的JSON数据 #}
+                {# {"booklist":[{"name":"射雕英雄传"},{"name":"神雕侠侣"},{"name":"天龙八部"},{"name":"雪山飞狐"}]} #}
+                $.get('/jsondata/', function (json_data) {
+
+                    booklist = json_data.booklist;
+
+                    $('#test li').remove();
+
+                    test_ul = $('#test');
+
+                    $.each(booklist, function (i,book) {
+                        test_ul.append('<li>'+book.name+'</li>');
+                    });
+                });
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+
+<input id="ajaxbtn" type="button" value="ajax_request">
+
+<ul>
+    <li>鹅鹅鹅</li>
+    <li>曲项向天歌</li>
+    <li>白毛浮绿水</li>
+    <li>红掌拨清波</li>
+</ul>
+
+<ul id="test" style="background: red;width: 100px;height: 100px;">
+    <li>床前明月光</li>
+    <li>地上鞋两双</li>
+    <li>举头望明月</li>
+    <li>低头思故乡</li>
+</ul>
+
+</body>
+</html>
