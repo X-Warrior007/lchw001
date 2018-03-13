@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义模板</title>
+</head>
+<body>
+
+{% comment %}
+多行注释
+{% endcomment %}
+
+{# 单行注释：加载自定义的过滤器 #}
+{% load customfilter %}
+
+<ul>
+    {% for book in book_list %}
+        {% if forloop.counter|mod %}
+            <li style="background: red">{{ book.name }}</li>
+        {% else %}
+            <li style="background: green">{{ book.name }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+<ul>
+    {% for book in book_list %}
+        {% if forloop.counter|mod1:3 %}
+            <li style="background: red">{{ book.name }}</li>
+        {% else %}
+            <li style="background: green">{{ book.name }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+</body>
+</html>

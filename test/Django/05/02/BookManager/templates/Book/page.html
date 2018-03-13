@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分页</title>
+</head>
+<body>
+
+{% if page.has_previous %}
+    <a href="/page{{ page.number|add:-1 }}/">上一页</a>
+{% endif %}
+
+<ul>
+    {% for sheng in page %}
+        <li>{{ sheng.name }}</li>
+    {% endfor %}
+</ul>
+
+{% for index in page.paginator.page_range %}
+    {% if index == page.number %}
+        {{ index }}
+    {% else %}
+        <a href="/page{{ index }}/">{{ index }}</a>
+    {% endif %}
+{% endfor %}
+
+<br>
+<br>
+
+{% if page.has_next %}
+    <a href="/page{{ page.number|add:1 }}/">下一页</a>
+{% endif %}
+
+</body>
+</html>

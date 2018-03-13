@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+</head>
+<body>
+
+<form action="/recvyzm/" method="post">
+
+    {% csrf_token %}
+
+    <input type="text" name="yzm">
+    <br>
+    <br>
+    <img src="/verifycode/" alt="">
+    <br>
+    <br>
+    <input type="submit" value="提交">
+</form>
+
+</body>
+</html>

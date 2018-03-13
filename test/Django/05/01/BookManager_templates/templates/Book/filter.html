@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过滤器</title>
+</head>
+<body>
+
+<ul>
+    {% for book in book_list %}
+        {% if book.name|length > 4 %}
+            <li style="background: red">{{ book.name }}--{{ book.pub_date|date:'Y年m月j日' }}</li>
+        {% else %}
+            <li style="background: green">{{ book.name }}--{{ book.pub_date }}</li>
+        {% endif %}
+    {% endfor %}
+</ul>
+
+</body>
+</html>

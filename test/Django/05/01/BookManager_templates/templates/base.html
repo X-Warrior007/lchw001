@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>父模板</title>
+</head>
+<body>
+
+<h1>我是网站的头部 {{ name }}</h1>
+
+{% block search_bar %}
+<h1>我是父模板的搜索框</h1>
+{% endblock search_bar %}
+
+{% block body %}
+
+{% endblock body %}
+
+<h1>我是网站的尾部</h1>
+
+</body>
+</html>

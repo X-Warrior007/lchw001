@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ok</title>
+</head>
+<body>
+
+{#<a href="/fan123/">跳转到fan1</a>#}
+<br>
+{# url标签会根据正则,动态生成一个地址,自动的渲染到页面中,一旦页面响应出去,旧自带动态生成的地址 #}
+<a href="{% url 'book:fan1' %}">跳转到fan1</a>
+<br>
+{#<a href="/fan2/18/188/">跳转到fan2</a>#}
+<br>
+<a href="{% url 'book:fan2' 18 188 %}">跳转到fan2</a>
+<br>
+{#<a href="/fan3/18/188/">跳转到fan3</a>#}
+{#<a href="{% url 'book:fan3' 18 188 %}">跳转到fan3</a>#}
+<a href="{% url 'book:fan3' num1=18 num2=188 %}">跳转到fan3</a>
+
+
+</body>
+</html>

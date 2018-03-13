@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>子模板</title>
+
+    {# 继承 base，html #}
+    {% extends 'base.html' %}
+
+</head>
+<body>
+
+{# 如果该模板有继承某个父模板，那么该模板中无法书写block标签以外的内容 #}
+{{ name }}
+
+{% block search_bar %}
+<h1 style="background: red">我是子模板的搜索框 {{ name }}</h1>
+{% endblock %}
+
+{% block body %}
+<h1>我是子模板的具体内容</h1>
+{% endblock %}
+
+</body>
+</html>

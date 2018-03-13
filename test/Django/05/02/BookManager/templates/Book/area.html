@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>省市区</title>
+
+    {# 加载jquery #}
+{#    <script src="/static/js/jquery-1.12.4.min.js"></script>#}
+
+{#    {% load static from staticfiles %}#}
+    {% load staticfiles %}
+    <script src="{% static 'js/jquery-1.12.4.min.js' %}"></script>
+
+    <script>
+        {# 当DOM加载完成之后,发送ajax的get请求,获取省级数据 #} //
+        $(function () {
+            // 发送ajax的get请求获取省级数据
+            // http://127.0.0.1:8000/sheng/
+            $.get('/sheng/', function (json_dict) {
+
+                // json_dict = {'shenglist':[[id,name],[id,name],...]}
+                sheng_list = json_dict.shenglist;
+
+                // 取出省标签
+                sheng_tag = $('#sheng');
+
+                // 遍历sheng_list = [[id,name],[id,name],...]
+                $.each(sheng_list, function (i,sheng) {
+                    // sheng = [id,name]
+                    // 将从json_dict当中剥取得数据,填充到sheng_tag
+                    sheng_tag.append('<option value="'+sheng[0]+'">'+sheng[1]+'</option>');
+                })
+            });
+        });
+
+    </script>
+
+
+</head>
+<body>
+
+<select id="sheng">
+    <option value="0">请选择</option>
+</select>
+
+<select id="shi">
+    <option value="0">请选择</option>
+</select>
+
+<select id="qu">
+    <option value="0">请选择</option>
+</select>
+
+</body>
+</html>
