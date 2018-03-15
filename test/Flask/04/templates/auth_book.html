@@ -1,0 +1,26 @@
+<h1>图书作者</h1>
+
+<h4>添加数据</h4>
+<form method="post">
+    {{ form.csrf_token }}
+    <p>作者: {{ form.auth }}</p>
+    <p>书籍: {{ form.book }}</p>
+    <p>{{ form.submit }}</p>
+
+
+</form>
+
+
+<h3>作者</h3>
+<ul>
+    <li>{% for index in auth %}</li>
+    <li>{{ index }}</li> <a href="/delete_author{{ index.id }}">删除</a>
+    <li>{% endfor %}</li>
+</ul>
+
+<h3>书籍</h3>
+<ul>
+    <li>{% for index in book %}</li>
+    <li>{{ index }}</li> <a href="/delete_book{{ index.id }}">删除</a>
+    <li>{% endfor %}</li>
+</ul>
