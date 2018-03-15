@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ request.method }}</title>
+</head>
+<body>
+
+<h1>宏</h1>
+{# 宏的定义 可以给宏传入参数#}
+{#{% macro fun(type=type,size=size) %}#}
+{#    <p><input type="{{ type }}" name="user" placeholder="User" size="{{ size }}"></p>#}
+{#    <p><input type="{{ type }}" name="pswd" placeholder="Password" size="{{ size }}"></p>#}
+{#    <p><input type="submit"></p>#}
+{##}
+{#{% endmacro %}#}
+
+{# 调用宏 #}
+{% import 'macros.html' as f %}
+
+{{ f.fun(type='password',size='20') }}
+
+<h1>注册</h1>
+
+<form method="post">
+{#     csrf_token的本质作用就是混淆发送给后端的参数#}
+    {{ form.csrf_token }}
+    <p>{{ form.user }}</p>
+    <p>{{ form.pswd }}</p>
+    <p>{{ form.pswd2 }}</p>
+    <p>{{ form.submit }}</p>
+    {% for x in get_flashed_messages() %}
+        {{ x }}
+    {% endfor %}
+
+
+</form>
+
+
+
+
+<h2>登陆</h2>
+{# 手写input表单,登陆页面 #}
+<form method="post">
+    <p><input type="text" name="user" placeholder="User" size="35"></p>
+    <p><input type="password" name="pswd" placeholder="Password" size="35"></p>
+    <p><input type="submit"></p>
+
+
+
+</form>
+
+
+</body>
+</html>

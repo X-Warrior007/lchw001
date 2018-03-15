@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>index</title>
+</head>
+<body>
+<p>{{ 'abcdefgh' }}</p>
+<p>{{ 'abcdefgh' | db2 }}</p>
+<p>{{ 'abcdefgh' | reverse }}</p>
+
+
+
+<hr>
+{# 对列表处理 #}
+<p>{{ [4,3,9,11,33,26]  }}</p>
+{# 去除第0个索引的值 #}
+<p>{{ [4,3,9,11,33,26] | first }}</p>
+<p>{{ [4,3,9,11,33,26] | length }}</p>
+<p>{{ [4,3,9,11,33,26] | last }}</p>
+<p>{{ [4,3,9,11,33,26] | sum }}</p>
+{# 默认情况下,升序排序 #}
+<p>{{ [33,3,9,11,4,26] | sort }}</p>
+
+
+<hr>
+
+{# 禁用转义 #}
+<p>{{ 'bAnK Of cHiNa' }}</p>
+{# 模板默认情况下会开启转义,所谓转义,原始字符串(不管里面有html或css或js)直接输出 #}
+<p>{{ '<em>bAnK Of cHiNa</em>' }}</p>
+{# 谨慎使用, 在确保数据没有安全隐患的情况下使用 #}
+<p>{{ '<em>bAnK Of cHiNa</em>' | safe }}</p>
+{# 转成大写 #}
+<p>{{ 'bAnK Of cHiNa'| upper }}</p>
+<p>{{ 'bAnK Of cHiNa'| lower }}</p>
+{# capitalize把首字母大写 #}
+{# 过滤器支持链式调用,执行过程是从前到后,依次执行 #}
+<p>{{ 'bAnK Of cHiNa'| capitalize | upper }}</p>
+<p>reverse:{{ 'bAnK Of cHiNa'| upper | reverse | reverse }}</p>
+
+
+</body>
+</html>
